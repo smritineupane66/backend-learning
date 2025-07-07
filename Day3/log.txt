@@ -1,0 +1,11 @@
+
+
+info: info:server started
+warn: warn:server warned
+error: error:server has error
+2025-07-07T14:53:27.581Z [info:[ Info: Server is running]]
+2025-07-07T14:53:27.584Z [warn:[Warning: Low memory]]
+2025-07-07T14:53:27.585Z [error:[ Error: Unable to connect to DB]]
+2025-07-07T14:53:29.262Z [info:[ Info: Server is running]]
+2025-07-07T14:53:29.265Z [warn:[Warning: Low memory]]
+2025-07-07T14:53:29.266Z [error:[ Error: Unable to connect to DB]]
