@@ -107,6 +107,7 @@
 // Middleware in Express
 
 // Middleware functions are the backbone of Express applications.
+// Middleware is essential for logging,authentication,request parsing,error handling
 
 // They have access to:
 
@@ -121,3 +122,82 @@
 // express.urlencoded() - Parse URL-encoded request bodies
 // express.static() - Serve static files
 // express.Router() - Create modular route handlers
+
+
+// Basic Middleware Example
+
+// import express from 'express'
+// const app = express();
+
+// // Middleware that logs request method and URL
+// app.use((req, res, next) => {
+//     console.log(`${req.method} ${req.url}`);
+//     next()    //pass to next middleware or route
+
+// })
+
+// app.get('/', (req, res) => {
+//     res.send('Hello smriti')
+//     console.log('A new request recieved at ' + Date.now());
+
+// })
+// app.get('/home', (req, res) => {
+//     res.send('Home Page');
+// });
+
+// app.get('/about', (req, res) => {
+//     res.send('About Page');
+// });
+
+// app.listen(3000, () => {
+//     console.log("Server is running on http://localhost:3000");
+
+// })
+
+
+
+// Built-in Middleware
+
+// express.json() = parse json body from incoming requests 
+// app.use(express.json())
+
+
+
+// . Middleware to Authenticate
+
+
+// import express from 'express'
+// const app = express();
+// const authenticate = (req,res,next)=>{
+//     if(req.headers.token==='123' && req.headers.username==='smriti'){
+//         next()   // proceed to route handler
+//     }else{
+//         res.status(401).send("Unauthorized")
+//     }
+
+// }
+// //  Apply authentication middleware only on /profile route
+// app.get("/profile",authenticate,(req,res)=>{
+//     res.send("This is your profile")
+// })
+
+//  app.listen(3000, () => {
+//     console.log("Server is running on http://localhost:3000");
+
+// })
+
+
+
+import express from 'express'
+import validateRegister from './middleware/validateRegister.js';
+const app = express()
+app.use(express.json())
+
+app.post('/register', validateRegister, (req, res) => {
+    res.send('Registration successful')
+    console.log(req.body);
+    
+})
+app.listen(3000, () => {
+    console.log("Server is running on http://localhost:3000");
+})
