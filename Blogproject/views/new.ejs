@@ -1,0 +1,25 @@
+<!-- post form to add new data -->
+ <!-- form to create new post  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Post</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <p>Welcome, <%= username %>! <a href="/logout">Logout</a> | <a href="/">Home</a></p>
+  </header>
+
+  <h1>Create New Post</h1>
+  <form action="/new" method="POST">
+    <input name="title" placeholder="Title" required />
+    <br/><br/>
+    <textarea name="content" placeholder="Content" rows="5" cols="30" required></textarea>
+    <br/><br/>
+    <button type="submit">Add Post</button>
+  </form>
+</body>
+</html>
+

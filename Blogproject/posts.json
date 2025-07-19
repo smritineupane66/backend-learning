@@ -1,0 +1,10 @@
+[{
+     "id": 1,
+    "title": "Welcome to My Blog",
+    "content": "This is the first post!"
+  },
+  {
+    "id": 2,
+    "title": "Dynamic Routing in Express",
+    "content": "Learn how to use parameters in routes."
+}]

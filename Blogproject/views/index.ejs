@@ -1,0 +1,24 @@
+<!-- shows list of posts -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts from Json</title>
+</head>
+
+<body>
+    <h2>Posts from json</h2>
+    
+      <ul>
+    <% posts.forEach(post => { %>
+      <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+    <% }) %>
+  </ul>
+
+
+</body>
+
+</html>
