@@ -1,6 +1,4 @@
 
-
-````markdown
 # Simple Blog App
 
 A minimal blog application using **Node.js**, **Express.js**, and **EJS**.
