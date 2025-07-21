@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog</title>
+</head>
+<body>
+  <h1>All Posts</h1>
+  <ul>
+    <% posts.forEach(post => { %>
+      <li><strong><%= post.title %></strong>: <%= post.content %></li>
+    <% }) %>
+  </ul>
+  <a href="/new">Add New Post</a>
+</body>
+</html>
