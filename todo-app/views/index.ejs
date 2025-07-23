@@ -6,16 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .task {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    .completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+
+    button {
+        margin-left: 10px;
+    }
+
+    a {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+</style>
 
 <body>
     <h2>To-Do List</h2>
-   <a href="/new">Add New Task</a>
+    <a href="/new">Add New Task</a>
     <ul>
-        <% todos.forEach(todo => { %>
-            <li><%= todo.task %></li>
-        <% }) %>
-    </ul>
+        <% todos.forEach(todo=> { %>
+            <li class="task">
+                <span class="<%= todo.completed ? 'completed' : '' %>">
+                    <%= todo.title %>
+                </span>
 
+                <% if (!todo.completed) { %>
+                    <form action="/complete/<%= todo.id %>" method="POST" style="display:inline;">
+                        <button> Mark as Done</button>
+                    </form>
+                    <% } else { %>
+                        <span style="color: green; margin-left: 10px;"> Completed</span>
+                        <% } %>
+
+                            <form action="/delete/<%= todo.id %>" method="POST" style="display:inline;">
+                                <button> Delete</button>
+                            </form>
+            </li>
+            <% }) %>
+    </ul>
 </body>
 
 </html>
