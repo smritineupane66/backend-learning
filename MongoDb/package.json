@@ -15,5 +15,10 @@
     "express": "^5.1.0",
     "mongoose": "^8.16.4",
     "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^24.1.0"
   }
 }
